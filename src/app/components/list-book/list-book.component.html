@@ -1,0 +1,29 @@
+<div class="container">
+    <table style="font-size:10pt; " class="table table-responsive border bg-white w-100 ">
+        <thead>
+            <tr class="bg-info">
+
+                <th scope="col"> bookId
+                </th>
+                <th scope="col">title</th>
+                <th scope="col">body</th>
+                <th scope="col">Options</th>
+
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let t of List">
+                <td>{{t.bookId}}</td>
+                <td>{{t.title}}</td>
+                <td>{{t.body}}</td>
+                <td class="btn-group" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-secondary"><i class="fas fa-align-justify"></i></button>
+                    <button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button>
+                    <button type="button" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>
