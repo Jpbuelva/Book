@@ -9,15 +9,33 @@ import { ListDTO } from '../../interfaces/list-dto';
 })
 export class ListBookComponent implements OnInit {
   List: Array<ListDTO>;
-  constructor(public listbookService: ListbookService ) { }
+  constructor(public listbookService: ListbookService ) { 
 
-  ngOnInit() {
-    this.listbookService.getList().subscribe((res: ListDTO[]) => {
-     this.List = res;
-    console.log(res);
-    } 
-      
-      );
   }
 
+  ngOnInit() {
+    this.loaddata();
+  }
+  loaddata(){
+    this.listbookService.getList().subscribe((res: ListDTO[]) => {
+      this.List = res;
+     console.log(res);
+     }  );
+  }
+  delete(id){
+    if(confirm('Está seguro que desea eliminar ? ')){
+      this.listbookService.delete(id).subscribe((res: ListDTO[]) => {
+        this.List = res; 
+       console.log( this.List); 
+       alert('Eliminida correctamente');
+       });
+
+    }else{
+      alert('No Eliminida ');
+
+    }
+
+
+  }
+   
 }

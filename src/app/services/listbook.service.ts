@@ -10,12 +10,20 @@ export class ListbookService {
 
   constructor(private http: HttpClient) { }
   getList(): Observable<any> {
-   return this.http.get('https://listbook-537c5.firebaseio.com/Book.json');
+   return this.http.get('https://jsonplaceholder.typicode.com/posts');
   //  return this.http.get(`${this.url}/Book`);
   }
   setBook(data): Observable<any> {
     const myheader = new HttpHeaders().set('Content-Type', 'application/json');
-    return this.http.post('https://listbook-537c5.firebaseio.com/Book.json', data, {headers: myheader});
+    return this.http.post('https://jsonplaceholder.typicode.com/posts', data, {headers: myheader});
     }
 
+    putBook(book): Observable<any> {
+      const myheader = new HttpHeaders().set('Content-Type', 'application/json');
+      return this.http.put('https://jsonplaceholder.typicode.com/posts/'+book.id, book, {headers: myheader});
+      }
+delete(id){
+  return this.http.delete('https://jsonplaceholder.typicode.com/posts/'+id);
+ //  return this.http.get(`${this.url}/Book`);
+ }
 }

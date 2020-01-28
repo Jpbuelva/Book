@@ -9,6 +9,7 @@ const routes: Routes = [
   {  path:'',component: ListBookComponent },  
   {  path:'List',component: ListBookComponent },
   {  path:'Forms',component: FormsComponent },
+  {  path:'edit/:id',component: FormsComponent },
   { path: '**', pathMatch: 'full', redirectTo: 'List'}
 ];
 

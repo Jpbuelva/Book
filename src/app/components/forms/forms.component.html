@@ -3,9 +3,14 @@
 
     <div>
         <div class="form-group">
-            <label for="bookId">bookId</label>
-            <input [(ngModel)]="book.bookId" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <label for="bookId">id</label>
+            <input [(ngModel)]="book.id" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
         </div>
+        <div class="form-group">
+            <label for="bookId">bookId</label>
+            <input [(ngModel)]="book.userId" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+      
         <div class="form-group">
             <label for="exampleInputPassword1">title</label>
             <input [(ngModel)]="book.title" type="text" class="form-control" id="exampleInputPassword1">
@@ -18,3 +23,5 @@
         <button (click)="saveBook(book)" class="btn btn-primary">Submit</button>
     </div>
 </div>
+ 
+ 
